@@ -21,6 +21,7 @@ What aliases mean:
 | *pushall* | --            | Push simultaneously all branches and tags.                           |
 | *pp*      | --            | Perform a push after a pull command.                                 |
 | *amid*    | Branch names  | Show affected files from differences between two given branch names. |
+| *l*       | Same          | Show logs as graph |
 
 ## Author
 

@@ -13,3 +13,4 @@
     pushall = "!f() { git push --all origin; git push --tags; }; f"
     pp = "!f() { git pull && git push; }; f"
     amid = "!f() { git diff $1..$2 --name-status; }; f"
+    l = log --graph
