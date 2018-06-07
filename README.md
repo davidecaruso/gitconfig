@@ -3,31 +3,31 @@
 List of git aliases.
 
 ## Usage
-Edit *.gitconfig* changing **\[EMAIL\]** and **\[FULL_NAME\]** with your info, then copy it into your user root directory.
+Copy the *.gitconfig* in your user root directory and edit **\[EMAIL\]** and **\[FULL_NAME\]** with your info.
 
-## Helps
-What aliases mean:
-
-| Alias         | Parameters    | Description                                                          |
-|---------------| ------------- |----------------------------------------------------------------------|
-| *co*          | Same          | Alias of *checkout* command.                                         |
-| *br*          | Same          | Alias of *branch* command.                                           |
-| *ci*          | Same          | Alias of *commit* command.                                           |
-| *st*          | Same          | Alias of *status* command.                                           |
-| *commend*     | --            | Combine staged changes with the previous commit.                     |
-| *unstage*     | --            | Unstage all changes.                                                 |
-| *undo*        | --            | Undo the previous un-pushed commit.                                  |
-| *untag*       | Tag name      | Delete remotely a tag.                                               |
-| *pushall*     | --            | Push simultaneously all branches and tags.                           |
-| *pp*          | --            | Perform a push after a pull command.                                 |
-| *amid*        | Branch names  | Show affected files from differences between two given branch names. |
-| *l*           | Same          | Show logs as graph.                                                  |
-| *reset-chmod* | --            | Reset files' permissions.                                            |
+## TOC
+| Alias         | Parameters          | Description                                                          |
+|---------------| ------------------- |----------------------------------------------------------------------|
+| *co*          | See `checkout`      | Alias of *checkout* command.                                         |
+| *br*          | See `branch`        | Alias of *branch* command.                                           |
+| *ci*          | See `commit`        | Alias of *commit* command.                                           |
+| *cia*         | --                  | Add all modifies to stage and commit commit.                         |
+| *st*          | See `status`        | Alias of *status* command.                                           |
+| *commend*     | --                  | Combine staged changes with the previous commit.                     |
+| *unstage*     | None or file paths  | Unstage all changes.                                                 |
+| *undo*        | --                  | Undo the previous un-pushed commit.                                  |
+| *untag*       | Tag name            | Delete remotely a tag.                                               |
+| *pushall*     | --                  | Push simultaneously all branches and tags.                           |
+| *pp*          | --                  | Perform a push after a pull command.                                 |
+| *amid*        | Two branch names    | Show affected files from differences between two given branch names. |
+| *l*           | See `log`           | Show logs as graph.                                                  |
+| *reset-chmod* | --                  | Reset files' permissions.                                            |
+| *new*         | Branch name         | Create a new branch.                                                 |
+| *rename*      | See `branch -m`     | Rename the current branch OR Reset files' permissions.               |
+| *clear*       | --                  | Reset all changes, creations and deletions.                          |
 
 ## Author
-
 [Davide Caruso](https://davidecaruso.github.io)
 
 ## License
-
-Licensed under [MIT](https://opensource.org/licenses/mit-license.php).
+Licensed under [MIT](LICENSE).

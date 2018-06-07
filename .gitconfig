@@ -5,6 +5,7 @@
     co = checkout
     br = branch
     ci = commit
+    cia = "!f() { git add .; git commit; }; f"
     st = status
     commend = commit --amend
     unstage = reset HEAD --
@@ -15,3 +16,6 @@
     amid = "!f() { git diff $1..$2 --name-status; }; f"
     l = log --graph
     reset-chmod = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
+    new = checkout -b
+    rename = branch -m
+    clear = "!f() { git add .; git reset --hard HEAD; }; f"
