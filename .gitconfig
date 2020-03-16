@@ -1,21 +1,30 @@
 [user]
-    email = [EMAIL]
-    name = [FULL_NAME]
+    email =
+    name =
 [alias]
+    # Abbreviations
     co = checkout
     br = branch
     ci = commit
-    cia = "!f() { git add .; git commit; }; f"
+    cia = "!f() { git add . && git commit; }; f"
     st = status
-    commend = commit --amend
-    unstage = reset HEAD --
-    undo = reset --soft HEAD~
-    untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
-    pushall = "!f() { git push --all origin; git push --tags; }; f"
+    pa = "!f() { git push --all origin && git push --tags; }; f"
     pp = "!f() { git pull && git push; }; f"
-    amid = "!f() { git diff $1..$2 --name-status; }; f"
-    l = log --graph
-    reset-chmod = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
     new = checkout -b
     rename = branch -m
+    commend = commit --amend
+
+    # Rollbacks
+    unstage = reset HEAD --
+    uncommit = reset --soft HEAD~
+    untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
     clear = "!f() { git add .; git reset --hard HEAD; }; f"
+
+    # Commands
+    all-diffs = "!f() { git diff $1..$2 --name-status; }; f"
+    new-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=A; }; f"
+    cop-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=C; }; f"
+    del-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=D; }; f"
+    mod-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=M; }; f"
+    ren-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=R; }; f"
+    reset-chmod = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
