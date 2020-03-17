@@ -3,6 +3,7 @@
     name =
 [alias]
     # Abbreviations
+    l = log --graph
     co = checkout
     br = branch
     ci = commit
