@@ -2,30 +2,33 @@
     email =
     name =
 [alias]
-    # Abbreviations
     l = log --graph
-    co = checkout
+    f = fetch -pv
     br = branch
-    ci = commit
-    cia = "!f() { git add . && git commit; }; f"
     st = status
-    pa = "!f() { git push --all origin && git push --tags; }; f"
-    pp = "!f() { git pull && git push; }; f"
     new = checkout -b
     rename = branch -m
-    commend = commit --amend
 
-    # Rollbacks
+    ci = commit
+    co = checkout
+    cp = !git co $1 && git pull origin $1
+    cia = !git add . && git ci
+    commend = ci --amend
+
+    pa = !git push --all origin && git push --tags
+    pp = !git pull && git push
+
+    sync = !git f; git cp master; git cp develop
+
+    clear = !git add . && git reset --hard HEAD
+    untag = !git push --delete origin $1 && git tag --delete $1
     unstage = reset HEAD --
     uncommit = reset --soft HEAD~
-    untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
-    clear = "!f() { git add .; git reset --hard HEAD; }; f"
 
-    # Commands
-    all-diffs = "!f() { git diff $1..$2 --name-status; }; f"
-    new-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=A; }; f"
-    cop-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=C; }; f"
-    del-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=D; }; f"
-    mod-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=M; }; f"
-    ren-diffs = "!f() { git diff $1..$2 --name-status --diff-filter=R; }; f"
-    reset-chmod = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
+    all-diffs = !git diff $1..$2 --name-status
+    new-diffs = !git all-diffs --diff-filter=A
+    cop-diffs = !git all-diffs --diff-filter=C
+    del-diffs = !git all-diffs --diff-filter=D
+    mod-diffs = !git all-diffs --diff-filter=M
+    ren-diffs = !git all-diffs --diff-filter=R
+    reset-chmod = !git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply

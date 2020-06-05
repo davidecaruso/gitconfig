@@ -1,33 +1,44 @@
-# Git config
-
-List of git aliases.
+# gitconfig
+> Speed up your development with a list of useful git aliases and shortcuts.
 
 ## Usage
-Copy the *.gitconfig* in your user root directory and edit **\[EMAIL\]** and **\[FULL_NAME\]** with your info.
+```shell script
+git clone git@github.com:davidecaruso/gitconfig.git && cd gitconfig
+cp .gitconfig ~ && vi ~/.gitconfig
+# Update "email" and "name" properties with yours
+```
 
 ## TOC
-| Alias         | Parameters          | Description                                                          |
-|---------------| ------------------- |----------------------------------------------------------------------|
-| *co*          | See `checkout`      | Alias of *checkout* command.                                         |
-| *br*          | See `branch`        | Alias of *branch* command.                                           |
-| *ci*          | See `commit`        | Alias of *commit* command.                                           |
-| *cia*         | --                  | Add all modifies to stage and commit commit.                         |
-| *st*          | See `status`        | Alias of *status* command.                                           |
-| *commend*     | --                  | Combine staged changes with the previous commit.                     |
-| *unstage*     | None or file paths  | Unstage all changes.                                                 |
-| *undo*        | --                  | Undo the previous un-pushed commit.                                  |
-| *untag*       | Tag name            | Delete remotely a tag.                                               |
-| *pushall*     | --                  | Push simultaneously all branches and tags.                           |
-| *pp*          | --                  | Perform a push after a pull command.                                 |
-| *amid*        | Two branch names    | Show affected files from differences between two given branch names. |
-| *l*           | See `log`           | Show logs as graph.                                                  |
-| *reset-chmod* | --                  | Reset files' permissions.                                            |
-| *new*         | Branch name         | Create a new branch.                                                 |
-| *rename*      | See `branch -m`     | Rename the current branch OR Reset files' permissions.               |
-| *clear*       | --                  | Reset all changes, creations and deletions.                          |
+| Alias         | Description                                                          | Parameters          |
+|---------------|----------------------------------------------------------------------|---------------------|
+| br            | Shortcut of `branch`                                                 | See `branch`        |
+| st            | Shortcut of `status`                                                 | See `status`        |
+| ci            | Shortcut of `commit`                                                 | See `commit`        |
+| co            | Shortcut of `checkout`                                               | See `checkout`      |
+| commend       | Shortcut of `commit --amend`                                         | --                  |
+| l             | Show logs graph                                                      | See `log`           |
+| f             | Fetch & prune                                                        | See `fetch`         |
+| new           | Create a new branch                                                  | Branch name         |
+| rename        | Rename the current branch name                                       | New branch name     |
+| cp            | Checkout in a branch and pull from origin                            | Branch name         |
+| cia           | Stage and commit all changes                                         | --                  |
+| pa            | Push all branches and tags                                           | --                  |
+| pp            | Pull & push the current branch                                       | --                  |
+| sync          | Fetch from remote and pull master and develop                        | --                  |
+| clear         | Clear all changes                                                    | --                  |
+| untag         | Delete locally and remotely a tag                                    | Tag name            |
+| unstage       | Remove from stage                                                    | File names          |
+| uncommit      | Undo the last commit locally                                         | --                  |
+| all-diffs     | All differences between two branches                                 | Two branch names    |
+| new-diffs     | New file differences between two branches                            | Two branch names    |
+| cop-diffs     | Copied file differences between two branches                         | Two branch names    |
+| del-diffs     | Deleted file differences between two branches                        | Two branch names    |
+| mod-diffs     | Modified file differences between two branches                       | Two branch names    |
+| ren-diffs     | Renamed file differences between two branches                        | Two branch names    |
+| reset-chmod   | Reset files permissions                                              | --                  |
 
 ## Author
-[Davide Caruso](https://davidecaruso.github.io)
+[Davide Caruso](https://about.me/davidecaruso)
 
 ## License
 Licensed under [MIT](LICENSE).
